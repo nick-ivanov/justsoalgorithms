@@ -50,38 +50,39 @@ public class QuickSortAscent implements IAlgorithm {
 	}
     }
 
-    private void quickSortAscend(int array[], int start, int end) {
-	if (start >= end) {
+    private void quickSortAscend(int array[], int start, int end) {	
+	if(start >= end) {
 	    return;
 	}
-
-	int dividingIndex = start + ((end - start) / 2);
-	int dividingValue = array[dividingIndex];
-	int leftIndex = start, rightIndex = end;
-
-	while (leftIndex <= rightIndex) {
-	    while (array[leftIndex] < dividingValue) {
-		leftIndex++;
+	
+	int midIndex = (start + end) / 2;
+	int midValue = array[midIndex];
+	int west = start, east = end;
+	
+	while(west <= east) {
+	    while(array[west] < midValue) {
+		west++;
 	    }
-
-	    while (array[rightIndex] > dividingValue) {
-		rightIndex--;
+	    
+	    while(array[east] > midValue) {
+		east--;
 	    }
-
-	    if (leftIndex <= rightIndex) {
-		int tmp = array[rightIndex];
-		array[rightIndex] = array[leftIndex];
-		array[leftIndex] = tmp;
-		leftIndex++;
-		rightIndex--;
+	    
+	    if(west <= east) {
+		int tmp = array[west];
+		array[west] = array[east];
+		array[east] = tmp;
+		west++;
+		east--;
 	    }
 	}
-
-	if (rightIndex > start) {
-	    quickSortAscend(array, start, rightIndex);
+	
+	if(west < end) {
+	    quickSortAscend(array, west, end);
 	}
-	if (leftIndex < end) {
-	    quickSortAscend(array, leftIndex, end);
+	
+	if(east > start) {
+	    quickSortAscend(array, start, east);
 	}
     }
 
