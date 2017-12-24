@@ -26,7 +26,8 @@ public class JustSoAlgorithms {
         System.out.println("=== Just So Algorithms ===");
         
         ArrayList<IAlgorithm> algorithms = new ArrayList<>();
-        algorithms.add(new QuickSortAscent());
+        algorithms.add(new QuickSortAscendant());
+	algorithms.add(new QuickSortAscendantNonrecursive());
         
         
         for(int i = 0; i < algorithms.size(); i++) {

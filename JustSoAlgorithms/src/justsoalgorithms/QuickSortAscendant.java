@@ -19,7 +19,7 @@ package justsoalgorithms;
 
 import java.util.Scanner;
 
-public class QuickSortAscent implements IAlgorithm {
+public class QuickSortAscendant implements IAlgorithm {
 
     @Override
     public void go() {
@@ -43,7 +43,7 @@ public class QuickSortAscent implements IAlgorithm {
 
 	quickSortAscend(array, 0, array.length - 1);
 
-	System.out.println("== SORTED ARRAY (QUICKSORT ASCENT) ==");
+	System.out.println("== SORTED ARRAY (QUICKSORT ASCENDANT RECURSIVE) ==");
 
 	for (int i = 0; i < n; i++) {
 	    System.out.println("ARRAY[" + i + "]: " + array[i]);
@@ -88,6 +88,6 @@ public class QuickSortAscent implements IAlgorithm {
 
     @Override
     public String description() {
-	return "Quick Search, Ascent Order";
+	return "Quick Search, Ascent Order, Recursive";
     }
 }
